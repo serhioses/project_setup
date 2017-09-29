@@ -1,0 +1,125 @@
+// Routine classes
+.block {
+  display: block;
+  width: 100%;
+}
+
+// .flex {
+//   display: flex;
+//   &--direction {
+//     &_row {
+//       flex-direction: row;
+//     }
+//     &_column {
+//       flex-direction: column;
+//     }
+//   }
+//   &--wrap {
+//     &_yes {
+//       flex-wrap: wrap;
+//     }
+//     &_no {
+//       flex-wrap: nowrap;
+//     }
+//   }
+// }
+
+// .link {
+  
+//   &--underline {
+    
+//   }
+//   &:hover {
+    
+//   }
+// }
+
+.table {
+  display: table;
+  &--full-width {
+    width: 100%;
+  }
+}
+
+.cell {
+  display: table-cell;
+  &--middle {
+    vertical-align: middle;
+  }
+  &--top {
+    vertical-align: top;
+  }
+  &--bottom {
+    vertical-align: bottom;
+  }
+  &--baseline {
+    vertical-align: baseline;
+  }
+  &--full-width {
+    width: 100%;
+  }
+  &--2 {
+    width: 50%;
+  }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.relative {
+  position: relative;
+}
+
+.inline-block {
+  display: inline-block;
+  &--top {
+    vertical-align: top;
+  }
+  &--middle {
+    vertical-align: middle;
+  }
+  &--bottom {
+    vertical-align: bottom;
+  }
+  &--baseline {
+    vertical-align: baseline;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+// Routine classes (END)

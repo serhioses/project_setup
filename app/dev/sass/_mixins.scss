@@ -1,0 +1,79 @@
+//Fonts
+@mixin font-face($font-name, $file-name, $suffix: "-webfont"){
+  @font-face {
+    font-family: $font-name;
+    src: url("../fonts/" + $file-name + $suffix + ".eot");
+    src: url("../fonts/" + $file-name + $suffix + ".eot?#iefix") format("embedded-opentype"),
+    url("../fonts/" + $file-name + $suffix + ".woff") format("woff"),
+    url("../fonts/" + $file-name + $suffix + ".ttf") format("truetype"),
+    url("../fonts/" + $file-name + $suffix + ".svg#" + $file-name) format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+// Grid
+@mixin createGrid($width, $prefix, $cols, $generate-offsets: false) {
+  @if $width {
+    @media (min-width: $width) {
+      [class*="col-#{$prefix}"] {
+        display: inline-block;
+        vertical-align: top;
+      }
+      
+      .col-#{$prefix} {
+        @for $i from 1 through $cols {
+          &-#{$i} {
+            width: to-fixed(percentage(1 / $cols * $i), 4);
+          }
+        }
+      }
+      
+      @if $generate-offsets {
+        .col-offset-#{$prefix} {
+          @for $i from 1 through $cols {
+            &-#{$i} {
+              margin-left: to-fixed(percentage(1 / $cols * $i), 4);
+            }
+          }
+        }
+      }
+
+      .hidden-#{$prefix} {
+        display: none !important;
+      }
+      .visible-#{$prefix} {
+        display: block !important;
+      }
+    }
+  } @else {
+    [class*="col-#{$prefix}"] {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .col-#{$prefix} {
+      @for $i from 1 through $cols {
+        &-#{$i} {
+          width: to-fixed(percentage(1 / $cols * $i), 4);
+        }
+      }
+    }
+    
+    @if $generate-offsets {
+      .col-offset-#{$prefix} {
+        @for $i from 1 through $cols {
+          &-#{$i} {
+            margin-left: to-fixed(percentage(1 / $cols * $i), 4);
+          }
+        }
+      }
+    }
+
+    .hidden-#{$prefix} {
+      display: none !important;
+    }
+    .visible-#{$prefix} {
+      display: block !important;
+    }
+  }
+}
